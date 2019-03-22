@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="register_Home()"></ion-back-button>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        
+        <div padding>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="user_name" placeholder="Username" name="uusename"></ion-input>
+          </ion-item><br>
+  
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="user_password" placeholder="Password" name="password"></ion-input>
+          </ion-item><br>
+
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="user_cpassword" placeholder=" Confirm Password" name="password"></ion-input>
+          </ion-item><br>
+
+          
+              
+              <div style="background-color:white">
+              <ion-radio-group>
+  
+              <ion-label>Sex:</ion-label><br><br>
+              <ion-label>Male</ion-label>
+             <ion-radio value="1" (ionSelect)="gender(1)"></ion-radio>&nbsp;&nbsp;&nbsp;
+  
+             <ion-label>Female</ion-label>
+             <ion-radio value="2" (ionSelect)="gender(2)"></ion-radio>&nbsp;&nbsp;&nbsp;
+  
+             <ion-label>Others</ion-label>
+             <ion-radio value="3" (ionSelect)="gender(3)"></ion-radio>
+            
+            </ion-radio-group><br>
+          </div><br>
+            
+        
+          <ion-item>
+            <ion-input type="qualification" [(ngModel)]="qualification" placeholder="Qualification" name="password"></ion-input>
+          </ion-item>
+        </div>
+
+        <div padding>
+          <ion-button size="medium"expand="block" (click)="popup()">Next</ion-button><br>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

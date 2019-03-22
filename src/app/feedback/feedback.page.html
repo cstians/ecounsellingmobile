@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+  <ion-textarea placeholder="Type Feedback here" rows="15" cols=10 (click)="sendfeed()">
+  </ion-textarea>
+  <ion-button (click)="cancel()" style="margin-left:3%">Cancel</ion-button>
+  <ion-button (click)="ok()" style="margin-left: 20%">OK</ion-button>
+
+</ion-content>

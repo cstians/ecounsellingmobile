@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="menu_Home()"></ion-back-button>
+  </ion-toolbar>
+</ion-header>   
+
+<ion-content padding>
+  
+  <ion-list>
+    <ion-item>
+      <ion-icon src="./assets/icon/videos.svg" (click)="mVideo()" style="color:blue"></ion-icon>
+      &nbsp;&nbsp;<a (click)="mVideo()" style="text-decoration:none">Motivational Videos</a>
+    </ion-item>
+
+    <ion-item>
+        <ion-icon src="./assets/icon/quotes.svg" (click)="qoute()" style="color:blue"></ion-icon>
+        &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Quotation</a>
+      </ion-item>
+
+    <ion-item>
+      <ion-icon src="./assets/icon/feedback.svg" style="margin-left:1px" (click)="feedpop()" style="color:blue"></ion-icon>
+      &nbsp;&nbsp;<a href="/feedback" style="text-decoration:none">Feedback</a>
+    </ion-item>
+      
+    <ion-item>
+      <ion-icon src="./assets/icon/share.svg" (click)="share()" style="color:blue"></ion-icon>
+      &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Share</a>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon src="./assets/icon/rate.svg" (click)="rate()" style="color:blue"></ion-icon>
+      &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Rate</a>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon src="./assets/icon/contact.svg" (click)="about()" style="color:blue"></ion-icon>
+      &nbsp;&nbsp;<a href="/about" style="text-decoration:none">About</a>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+
