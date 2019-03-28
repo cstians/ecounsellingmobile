@@ -13,6 +13,7 @@ import{File} from '@ionic-native/file/ngx';
 import {SocialSharing} from '@ionic-native/social-sharing/ngx';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,7 +23,8 @@ import {SocialSharing} from '@ionic-native/social-sharing/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File,
-    SocialSharing
+    SocialSharing,
+    
 
   ],
   bootstrap: [AppComponent]

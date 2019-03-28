@@ -1,0 +1,22 @@
+ion-button{
+    width: 70%;
+
+}
+ion-item ion-label{
+    color: white;
+}
+ion-item ion-icon{
+    color:white;
+}
+.toolbar{
+    --background:#3399FF;
+}
+
+ion-button ion-icon{
+    position: absolute;
+    left: 3%;
+}
+ion-button ion-label{
+    position: absolute;
+    left: 15%;
+}

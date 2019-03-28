@@ -1,4 +1,24 @@
-ion-grid{
-    background: radial-gradient(#73CFF6, #73CFF6, white);
-    background-size:contain;   
+ion-content{
+    --background: radial-gradient(#73CFF6, #73CFF6, white);
+      
+}
+
+ion-button{
+    --background:#405C9C;
+}
+
+ion-content{
+    --background: #00CCFF;
+
+}
+.toolbar{
+    --background:#3399FF;
+}
+.gender{
+    background:white;
+    height: 50px;
+    border-radius:10px;
+}
+ion-item{
+    --border-radius:10px;
 }

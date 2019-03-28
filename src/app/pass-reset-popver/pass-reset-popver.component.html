@@ -6,15 +6,19 @@
              <!--xs,sm,md,lg,xl-->
              <ion-row>
                <ion-col size="12">
-                  <div padding>
-                  <p>Change your password</p>
+                  <ion-card>
+                  <ion-card-header style="background:black">
+                    <ion-card-title>
+                      Register as:
+                    </ion-card-title>
+                  </ion-card-header>
                   <ion-item>
                       <input type="text" [(ngModel)]="user_email" placeholder="Enter your email address" style="width:100%;border:none;background: blue">
                     </ion-item>
                     <ion-item>
                       <input type="password" [(ngModel)]="user_newpass" placeholder="Enter new password">
                     </ion-item>
-                  </div>
+                  </ion-card>
                     <ion-button (click)="submit()" style="margin-left:3%" expand="block">Submit</ion-button>
                     
 

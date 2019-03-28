@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -34,6 +35,9 @@ export class HomePage {
      }
      depression(){
        this.router.navigateByUrl('/depression-test')
+     }
+     questionans(){
+       this.router.navigateByUrl('/question-answer')
      }
 
 

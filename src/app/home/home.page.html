@@ -1,19 +1,31 @@
-  <ion-header>
-   
-    <ion-toolbar style="--background:#306754">
-        
-     <ion-tab-bar style="--background:#306754">
+ 
+   <ion-header>
+    <ion-toolbar class="toolbar">    
+     <ion-tab-bar>
         <ion-label style="color:white">Counsellor</ion-label>
-          <ion-tab-button (click)="setting()" style="margin-top: 5%;">
+
+
+        <ion-tab-button (click)="setting()" class="notbutton">
+            <ion-icon style="color: white"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="setting()" class="notbutton">
+            <ion-icon  style="color: white"></ion-icon>
+        </ion-tab-button>
+
+
+        <ion-tab-button (click)="setting()" class="notbutton">
+            <ion-icon src="./assets/icon/notify.svg" style="color: white"></ion-icon>
+        </ion-tab-button>
+
+          <ion-tab-button (click)="setting()" class="setbutton">
               <ion-icon src="./assets/icon/sett.svg" style="color: white"></ion-icon>
           </ion-tab-button>
-          <ion-tab-button (click)="setting()" style="margin-top: 5%;">
-              <ion-icon src="./assets/icon/notify.svg"></ion-icon>
-          </ion-tab-button>
-      </ion-tab-bar>
- 
-    </ion-toolbar>
-  </ion-header>
+          
+        </ion-tab-bar>
+      </ion-toolbar>
+     </ion-header>
+    
+  
     
   
 
@@ -58,27 +70,26 @@
   </ion-list>
 
 </ion-content>
-
 <ion-tabs slot="bottom">
-  <ion-tab-bar style="--background:#306754">
+  <ion-tab-bar class="bottomtab">
     <ion-tab-button >
-      <ion-icon src="./assets/icon/chat.svg" style="color: white"></ion-icon>
+      <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white"></ion-icon>
       <ion-label style="color:white">Chat</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button>
-        <ion-icon src="./assets/icon/question.svg"></ion-icon>
-        <ion-label>Chat</ion-label>
+    <ion-tab-button (click)="questionans()">
+        <ion-icon src="./assets/icon/question.svg" style="color:white"></ion-icon>
+        <ion-label style="color:white">Question</ion-label>
       </ion-tab-button>
 
       <ion-tab-button (click)="depression()">
-          <ion-icon name="add"></ion-icon>
-          <ion-label>Depression</ion-label>
+          <ion-icon name="add" style="color:white"></ion-icon>
+          <ion-label style="color:white">Depression</ion-label>
         </ion-tab-button>
 
         <ion-tab-button (click)="menu()">
-            <ion-icon src="./assets/icon/menu.svg"></ion-icon>
-            <ion-label>Menu</ion-label>
+            <ion-icon src="./assets/icon/menu.svg" style="color:white"></ion-icon>
+            <ion-label style="color:white">Menu</ion-label>
           </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
