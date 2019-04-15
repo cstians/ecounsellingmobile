@@ -15,9 +15,13 @@ const routes: Routes = [
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
   { path: 'developers', loadChildren: './developers/developers.module#DevelopersPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'depression-test', loadChildren: './depression-test/depression-test.module#DepressionTestPageModule' },  { path: 'question-answer', loadChildren: './question-answer/question-answer.module#QuestionAnswerPageModule' },
-  { path: 'feedback-page', loadChildren: './feedback-page/feedback-page.module#FeedbackPagePageModule' },
+  { path: 'depression-test', loadChildren: './depression-test/depression-test.module#DepressionTestPageModule' },
+  { path: 'question-answer', loadChildren: './question-answer/question-answer.module#QuestionAnswerPageModule' },
+  
   { path: 'quotation', loadChildren: './quotation/quotation.module#QuotationPageModule' },
+  { path: 'ask-question', loadChildren: './ask-question/ask-question.module#AskQuestionPageModule' },  { path: 'feedbackpage', loadChildren: './feedbackpage/feedbackpage.module#FeedbackpagePageModule' },
+
+  
 
   
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question-answer',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionAnswerPage implements OnInit {
   response:string="No Answer yet";
-  constructor() { }
+  constructor( private router:Router) { }
+
+  questionpage(){
+    this.router.navigateByUrl('/ask-question');
+  }
 
 
   ngOnInit() {

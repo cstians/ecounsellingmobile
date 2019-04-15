@@ -37,7 +37,7 @@ export class MenuPage implements OnInit {
   }
 
   feeds(){
-    this.router.navigateByUrl('/feedback-page');
+    this.router.navigateByUrl('/feedbackpage');
   }
 
   share(){

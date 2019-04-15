@@ -11,54 +11,39 @@
 <ion-grid>
   <ion-row>
     <ion-col size="12">
-        <ion-list>
-          <ion-item>
-            <ion-button (click)="mVideo()">
-                <ion-icon src="./assets/icon/videos.svg"></ion-icon>
+        
+              <div class="youtubeicon">
+                <ion-icon name="logo-youtube" (click)="mVideo()" style="zoom:5"></ion-icon><br>
                 <ion-label>Motivational Videos</ion-label>
-            </ion-button><br>
-          </ion-item>
-          
+              </div>
       
-            <ion-item>
-             <ion-button (click)="qoute()">
-                <ion-icon src="./assets/icon/quotes.svg"></ion-icon>
+              <div  class="qouteicon">
+                <ion-icon src="./assets/icon/quotes.svg" (click)="qoute()" style="zoom:5"></ion-icon><br>
                 <ion-label>Qoutation</ion-label>
-             </ion-button><br>
-            </ion-item>
+              </div><br>
+          
+              <div class="feedbackicon">
+               <ion-icon src="./assets/icon/feedbackicon.svg" (click)="feeds()" style="zoom:5"></ion-icon><br>
+               <ion-label style="margin-left:10%">Feedback</ion-label>
+               </div>
+          
+          
+            <div class="shareicon">
+            <ion-icon name="share" (click)="Share()" style="zoom:5"></ion-icon><br>
+            <ion-label style="margin-left:10%">Share</ion-label>
+           </div>
         
       
-            <ion-item>
-            <ion-button (click)="feeds()">
-               <ion-icon src="./assets/icon/feedback.svg"></ion-icon>
-               <ion-label>Feedback</ion-label>
-            </ion-button><br>
-          </ion-item>
-          
-          
-            <ion-item>
-            <ion-button (click)="Share()">
-            <ion-icon name="share"></ion-icon>
-            <ion-label>Share</ion-label>
-            </ion-button><br>
-            </ion-item>
-        
-      
-            <ion-item>
-            <ion-button (click)="rate()">
-                <ion-icon src="./assets/icon/rate.svg"></ion-icon>
-                <ion-label>Rate</ion-label>
-            </ion-button><br>
-          </ion-item>
+               <div class="rateicon">
+                <ion-icon src="./assets/icon/rate.svg" (click)="rate()" style="zoom:5"></ion-icon><br>
+                <ion-label style="margin-left:13%">Rate</ion-label>
+              </div>
           
       
-            <ion-item>
-            <ion-button (click)="about()">
-                <ion-icon src="./assets/icon/contact.svg"></ion-icon>
-                <ion-label >About</ion-label>
-            </ion-button>
-            </ion-item>
-          </ion-list>
+                <div class="abouticon">
+                <ion-icon src="./assets/icon/contact.svg" (click)="about()" style="zoom:5"></ion-icon><br>
+                <ion-label style="margin-left:12%">About</ion-label>
+              </div>
     </ion-col>
   </ion-row>
 </ion-grid>

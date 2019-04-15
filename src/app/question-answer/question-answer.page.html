@@ -8,19 +8,12 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-          <div padding>
-              <ion-item>
-                  <ion-textarea type="textarea" placeholder="Ask question here"></ion-textarea>
-              </ion-item><br><br>
-            
-              <ion-item>
-                  <ion-textarea type="textarea" placeholder="Write description (optional)" ></ion-textarea>
-              </ion-item>
-              <ion-button expand="block">Send</ion-button>
-          </div><br>
-          <ion-card style="height:40%">
-            {{response}}
+        
+          <ion-button expand="full" (click)="questionpage()">Ask Question</ion-button>
+          <ion-card style="height:150%" expand="full">
+            Question and answer
           </ion-card>
+        
       </ion-col>
     </ion-row>
   </ion-grid>
