@@ -5,7 +5,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'chatscreen', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'developers', loadChildren: './developers/developers.module#DevelopersPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'depression-test', loadChildren: './depression-test/depression-test.module#DepressionTestPageModule' },
+  { path: 'chatscreen', loadChildren: './chatscreen/chatscreen.module#ChatscreenPageModule' },
 
 ];
 

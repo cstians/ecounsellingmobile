@@ -1,0 +1,46 @@
+page-home {
+
+    .message_row {
+    
+    background-color: #fff;
+    
+    }
+    
+    .message {
+    
+    padding: 10px! important;
+    
+    transition: all 250ms ease-in-out !important;
+    
+    border-radius: 10px !important;
+    
+    margin-bottom: 4px !important;
+    
+    }
+    
+    .my_message {
+    
+    background: color(#FFF, primary) !important;
+    
+    color: #000 !important;
+    
+    }
+    
+    .other_message {
+    
+    background: #0000ff !important;
+    
+    color: #000 !important;
+    
+    }
+    
+    .time {
+    
+    color: #afafaf;
+    
+    float: right;
+    
+    font-size: small;
+    
+    }
+    }

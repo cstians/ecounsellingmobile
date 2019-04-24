@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController} from '@ionic/angular';
+import { PopoverController, NavController} from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
 import { Router } from '@angular/router';
 import { RegisterPageModule } from './register.module';
 import { ok } from 'assert';
 import { HomePopoverComponent } from '../home-popover/home-popover.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterPage implements OnInit {
   user_password:string="";
   user_cpassword:string="";
   qualification:string="";
-  constructor(public popoverCtrl:PopoverController,private router:Router,public toastCtrl:ToastController) { }
+  constructor(public navCtrl:NavController,public popoverCtrl:PopoverController,private router:Router,public toastCtrl:ToastController,private http: HttpClient) { }
 
   async popup(event){
 
@@ -31,7 +32,7 @@ export class RegisterPage implements OnInit {
       
     }
 
-    else if(this.user_password==""){
+    else if(this.user_password=="") {
 
       const toast= await this.toastCtrl.create({
         message:"Password field is empty",
@@ -75,14 +76,29 @@ export class RegisterPage implements OnInit {
 
 
     else{
-   
-    const popover= await this.popoverCtrl.create({
-      component:HomePopoverComponent,
-      event
-    });
+      let postData = {
+        "name": this.user_cpassword,
+        "email": this.user_name,
+        "password": this.user_password,
+        "designation": this.qualification
+      }
+
+      this.http.post('http://localhost:8000/api/signup', postData).subscribe((response) => {
+        console.log(response);
+        this.navCtrl.navigateForward('/home');
+      }, error => {
+        console.log(error);
+      /*if(JSON.stringify(response['one']) == '"Doten"') {
+        this.jsondata = 'Login Success';
+      }*/
+      });
+      /*const popover= await this.popoverCtrl.create({
+        component:HomePopoverComponent,
+        event
+    });*/
     
-    return await popover.present();
-  }
+    //return await popover.present();
+    }
 
   }
 
