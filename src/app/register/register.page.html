@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
 
     <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="register_Home()"></ion-back-button>
     <ion-title>register</ion-title>
@@ -26,11 +26,10 @@
 
           
               
-              <div style="background-color:white">
+            <div class="gender">
               <ion-radio-group>
-  
-              <ion-label>Sex:</ion-label><br><br>
-              <ion-label>Male</ion-label>
+              &nbsp;&nbsp;<ion-label>Sex:</ion-label><br>
+              &nbsp;&nbsp;<ion-label>Male</ion-label>
              <ion-radio value="1" (ionSelect)="gender(1)"></ion-radio>&nbsp;&nbsp;&nbsp;
   
              <ion-label>Female</ion-label>
@@ -39,8 +38,8 @@
              <ion-label>Others</ion-label>
              <ion-radio value="3" (ionSelect)="gender(3)"></ion-radio>
             
-            </ion-radio-group><br>
-          </div><br>
+            </ion-radio-group>
+           </div><br>
             
         
           <ion-item>

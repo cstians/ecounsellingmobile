@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
     <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="backMenu()"></ion-back-button>
     <ion-title>about</ion-title>
   </ion-toolbar>
@@ -9,31 +9,24 @@
   <ion-grid>
     <ion-row justity-content-center>
       <ion-col size="12">
-      <ion-img src="./assets/icon/logo.png" style="width:30%;height:30%;margin-left: 34%;border-radius: 60%;-webkit-border-radius:50%;-moz-border-radius:50%;display:block;border: ridge"></ion-img>
+      <ion-img src="./assets/icon/logo.png" style="width:40%; height:40%;margin-left: 30%;"></ion-img>
     
+    
+  <fieldset>
+      <legend>Vission</legend><br>
+      <p >Peer-to-peer education using alternative methods of education (such as theatre-based techniques, role games,simulations, etc.)</p>
+  </fieldset><br>
+
+  <fieldset>
+      <legend>Mission</legend><br>
+      <p style="justify-content: center">Strengthen and spread high quality peer-to-peer education in the field of adolescent sexual and reproductive health (SRH) and HIV prevention worldwide.</p>
+  </fieldset><br>
     
   
-  <ion-card>
-    <ion-list>
-      <ion-item>
-        <ion-icon src="./assets/icon/vission.svg"></ion-icon>
-          <h3>Vision</h3><br>
-        </ion-item>
+
+
+ 
       
-          <p >Peer-to-peer education using alternative methods of education (such as theatre-based techniques, role games,simulations, etc.)</p>
-        
-      <ion-item>
-          <ion-icon src="./assets/icon/mission.svg"></ion-icon>
-          <h3>Mission</h3><br>
-        </ion-item>
-          <p style="justify-content: center">Strengthen and spread high quality peer-to-peer education in the field of adolescent sexual and reproductive health (SRH) and HIV prevention worldwide.</p>
-      
-      <ion-item>
-          <ion-icon src="./assets/icon/chat.svg"></ion-icon>
-      <a (click)="developer()">Developers</a>
-      </ion-item>
-    </ion-list>
-     </ion-card>
       </ion-col>
     </ion-row>
    </ion-grid>

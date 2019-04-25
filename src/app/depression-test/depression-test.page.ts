@@ -37,6 +37,11 @@ export class DepressionTestPage implements OnInit {
   question8no='8.DEPRESSION is likely';
   question8yes='8.Are ay of the following symptoms present? (-suicidal ideation,--Beliefs of worthlessness,--Psychotic symptoms, --Talking or moving more slowly than normal )'
   protocol3='8.PROTOCOL 3';
+
+  question9no='9.Does the person have a previous history of depression?';
+  question10no='Do not manage for depression.'
+
+  hide:string='';
   
  
 
@@ -72,11 +77,24 @@ export class DepressionTestPage implements OnInit {
     else if(this.question==''+this.question6yesno){
       this.question=''+this.question7yes;
       this.subquestion=''+this.protocol2;
-      this.toggle='Previous Question';
+      this.toggle='Go to Home';
+      this.hide='hide';
     }
     else if(this.question==''+this.question7no){
       this.question=''+this.question8yes;
       this.toggle='Previous Question';
+    }
+
+    else if(this.question=''+this.question8yes){
+      this.question=''+this.question8no;
+      this.toggle='Go to Home';
+      this.hide='hide';
+    }
+
+    else if(this.question==''+this.question9no){
+      this.question=''+this.question8no;
+      this.toggle='Go to Home';
+      this.hide='hide';
     }
   }
 
@@ -84,19 +102,24 @@ export class DepressionTestPage implements OnInit {
     if(this.question=="1.Does the person has depression?"){
       this.question=''+this.questionno1;
       this.subquestion="";
-      this.toggle='Previous Question';
+      this.toggle='Go to Home';
+
+      this.hide='hide';
+      
     }
 
     else if(this.question==''+this.question2yes){
       this.question=''+this.questionno2;
       this.subquestion='';
-      this.toggle='Previous Question';
+      this.toggle='Go to Home';
+      this.hide='hide';
     }
 
     else if(this.question==''+this.question3yes){
       this.question=''+this.questionno3;
       this.subquestion='';
-      this.toggle='Previous Question';
+      this.toggle='Go to Home';
+      this.hide='hide';
     }
     else if(this.question==''+this.question4yes){
       this.question=''+this.question6yesno;
@@ -105,17 +128,32 @@ export class DepressionTestPage implements OnInit {
       }
       else if(this.question==''+this.question5yes){
          this.question=''+this.question5no;
-         this.toggle='Previous Question';
+         this.toggle='Go to Home';
+         this.hide='hide';
+
       }
-      else if(this.question=''+this.question6yesno){
+      else if(this.question==''+this.question6yesno){
         this.question=''+this.question7no;
         this.subquestion='';
         this.toggle='Previous Question';
+      
       }
-     else if(this.question==''+this.question){
+     else if(this.question==''+this.question7no){
        this.question=''+this.question8no;
-       this.toggle='Previous Question';
+       this.toggle='Go to Home';
+       this.hide='hide';
      }
+
+     else if(this.question==''+this.question8yes){
+       this.question=''+this.question9no;
+       this.toggle='Previous Question';
+        }
+
+    else if(this.question==''+this.question9no){
+      this.question=''+this.question10no;
+      this.toggle='Go to Home';
+      this.hide='hide';
+    }
   }
 
   back(){

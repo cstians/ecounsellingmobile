@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>feedbackpage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="feed_div">
+    <ion-icon src="./assets/icon/feedbackicon.svg" style="zoom:10"></ion-icon>
+  </div>
+
+  
+    <ion-textarea type="text" [(ngModel)]="feedback" Placeholder="Give Your Sincere Feedback"></ion-textarea>
+    <br>
+ 
+
+  <ion-button expand="full" (click)="feedback()">Submit</ion-button>
+
+</ion-content>

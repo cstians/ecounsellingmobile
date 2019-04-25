@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
-import { ok } from 'assert';
-import { FeedbackPage } from '../feedback/feedback.page';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { AppRate } from '@ionic-native/app-rate';
+
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,16 @@ import { FeedbackPage } from '../feedback/feedback.page';
 })
 export class MenuPage implements OnInit {
 
-  constructor(public popoverCtrl:PopoverController, private router:Router) { }
+  constructor(public popoverCtrl:PopoverController, private router:Router,public socialsharing:SocialSharing) { }
+  
+  Share(){
+    this.socialsharing.share('hello','to you',null,'https://www.facebook.com').then((data)=>{
+    },(err)=>{
+       alert(JSON.stringify(err));
+    })
+    }
+
+
 
   about(){
     this.router.navigateByUrl('/about');
@@ -23,11 +33,11 @@ export class MenuPage implements OnInit {
   }
 
   qoute(){
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/quotation');
   }
 
-  feed(){
-    this.router.navigateByUrl('/feedback');
+  feeds(){
+    this.router.navigateByUrl('/feedbackpage');
   }
 
   share(){

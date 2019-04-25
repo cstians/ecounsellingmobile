@@ -1,42 +1,53 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="toolbar">
       <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="menu_Home()"></ion-back-button>
   </ion-toolbar>
 </ion-header>   
 
 <ion-content padding>
   
-  <ion-list>
-    <ion-item>
-      <ion-icon src="./assets/icon/videos.svg" (click)="mVideo()" style="color:blue"></ion-icon>
-      &nbsp;&nbsp;<a (click)="mVideo()" style="text-decoration:none">Motivational Videos</a>
-    </ion-item>
-
-    <ion-item>
-        <ion-icon src="./assets/icon/quotes.svg" (click)="qoute()" style="color:blue"></ion-icon>
-        &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Quotation</a>
-      </ion-item>
-
-    <ion-item>
-      <ion-icon src="./assets/icon/feedback.svg" style="margin-left:1px" (click)="feedpop()" style="color:blue"></ion-icon>
-      &nbsp;&nbsp;<a href="/feedback" style="text-decoration:none">Feedback</a>
-    </ion-item>
+ 
+  
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+        
+              <div class="youtubeicon">
+                <ion-icon name="logo-youtube" (click)="mVideo()" style="zoom:5"></ion-icon><br>
+                <ion-label>Motivational Videos</ion-label>
+              </div>
       
-    <ion-item>
-      <ion-icon src="./assets/icon/share.svg" (click)="share()" style="color:blue"></ion-icon>
-      &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Share</a>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon src="./assets/icon/rate.svg" (click)="rate()" style="color:blue"></ion-icon>
-      &nbsp;&nbsp;<a href="/home" style="text-decoration:none">Rate</a>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon src="./assets/icon/contact.svg" (click)="about()" style="color:blue"></ion-icon>
-      &nbsp;&nbsp;<a href="/about" style="text-decoration:none">About</a>
-    </ion-item>
-  </ion-list>
+              <div  class="qouteicon">
+                <ion-icon src="./assets/icon/quotes.svg" (click)="qoute()" style="zoom:5"></ion-icon><br>
+                <ion-label>Qoutation</ion-label>
+              </div><br>
+          
+              <div class="feedbackicon">
+               <ion-icon src="./assets/icon/feedbackicon.svg" (click)="feeds()" style="zoom:5"></ion-icon><br>
+               <ion-label style="margin-left:10%">Feedback</ion-label>
+               </div>
+          
+          
+            <div class="shareicon">
+            <ion-icon name="share" (click)="Share()" style="zoom:5"></ion-icon><br>
+            <ion-label style="margin-left:10%">Share</ion-label>
+           </div>
+        
+      
+               <div class="rateicon">
+                <ion-icon src="./assets/icon/rate.svg" (click)="rate()" style="zoom:5"></ion-icon><br>
+                <ion-label style="margin-left:13%">Rate</ion-label>
+              </div>
+          
+      
+                <div class="abouticon">
+                <ion-icon src="./assets/icon/contact.svg" (click)="about()" style="zoom:5"></ion-icon><br>
+                <ion-label style="margin-left:12%">About</ion-label>
+              </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+ 
 
 </ion-content>
 
