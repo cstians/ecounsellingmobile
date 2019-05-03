@@ -3,13 +3,6 @@ ion-textarea{
 
 }
 
-label{
-    position: absolute;
-    
-    top: 0;
-    left: 0;
-    transform: translate(0,16px) scale(.75);
-}
 
 ion-input:focus ~ label{
     top: -18px;

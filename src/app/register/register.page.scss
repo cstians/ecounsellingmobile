@@ -1,10 +1,19 @@
-ion-content{
-    --background: radial-gradient(#73CFF6, #73CFF6, white);
+.main_register{
+    --background: url(../../assets/img/background.jpg);
+      background-size: cover;
+      background-position: center;
+      background: transparent;
+
+
+}
       
+.register_div_class{
+    background: rgba(1, 1, 1, 0.4);
+    margin-top: 60%;
 }
 
 ion-button{
-    --background:#405C9C;
+    --background:#E78408;
 }
 
 ion-content{
@@ -14,11 +23,16 @@ ion-content{
 .toolbar{
     --background:#3399FF;
 }
-.gender{
-    background:white;
-    height: 50px;
-    border-radius:10px;
+ion-radio-group{
+    
+    color: white;
 }
-ion-item{
-    --border-radius:10px;
+ion-input{
+    color: white;
+    border-bottom:2px solid white;
+
+}
+
+ion-radio-group ion-radio{
+    color: white;
 }

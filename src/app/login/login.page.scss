@@ -1,9 +1,14 @@
 
 
-ion-content
+.main
 {
-    --background: #00CCFF;
+--background: url(../../assets/img/background.jpg);
+background-size: cover;
+background-position: center;
+background: transparent;
+
 }
+
 ion-grid{
     margin-top: 20%;
 }
@@ -25,10 +30,12 @@ margin-left: 30%;
 
     
     padding: 20px;
-    width:200px;
-    height: 35px;
+    width:245px;
+    height: 20%;
+    color: white;
+    border-bottom:1px solid white;
    
-    background-image: none;
+   
     
 }
 
@@ -38,8 +45,10 @@ margin-left: 30%;
 
    
     padding: 20px;
-    width: 200px;
-    height: 35px;
+    width: 245px;
+    height: 20%;
+    color: white;
+    border-bottom:1px solid white;
   
 
 }
@@ -71,15 +80,17 @@ ion-button span{
     --background:#3399FF;
 }
 ion-button{
-    --background:#405C9C;
+    --background:#63C76A;
     
     
 
     
 }
 
-ion-item{
-    --border-radius:10px;
+
+.Login{
+    
+    background: rgba(0,0,0,0.2);
 }
 
     

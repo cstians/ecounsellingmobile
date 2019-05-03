@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ask-question',
@@ -7,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AskQuestionPage implements OnInit {
 
-  question:string='';
-  description:string='';
+  question='';
+  description='';
+  username=''
 
-  constructor() { }
+  constructor(private http:HttpClient,private navCtrl:NavController) { }
+
+  Query(){
+    let data={
+      question:this.question,
+      description:this.description,
+      username:'Doten'
+    }
+
+    this.http.post('http://localhost:8000/api/addquestion',data).subscribe((response)=>{
+      console.log(response);
+      this.navCtrl.navigateForward('/home');
+    })
+  }
 
   ngOnInit() {
   }

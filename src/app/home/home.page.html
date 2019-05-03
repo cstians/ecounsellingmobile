@@ -1,75 +1,46 @@
  
    <ion-header>
-    <ion-toolbar class="toolbar">    
-     <ion-tab-bar>
+    <ion-toolbar>    
+ 
         <ion-label style="color:white">Counsellor</ion-label>
 
 
-        <ion-tab-button (click)="setting()" class="notbutton">
-            <ion-icon style="color: white"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button (click)="setting()" class="notbutton">
-            <ion-icon  style="color: white"></ion-icon>
-        </ion-tab-button>
-
 
         <ion-tab-button (click)="setting()" class="notbutton">
-            <ion-icon src="./assets/icon/notify.svg" style="color: white"></ion-icon>
+            <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff"></ion-icon>
         </ion-tab-button>
 
           <ion-tab-button (click)="setting()" class="setbutton">
               <ion-icon src="./assets/icon/sett.svg" style="color: white"></ion-icon>
           </ion-tab-button>
           
-        </ion-tab-bar>
+        
       </ion-toolbar>
      </ion-header>
     
-  
-    
-  
-
 <ion-content>
- 
-  <ion-list>
-    <ion-item>
-      <ion-label>Doten Dorji</ion-label>
-    </ion-item>
-
-    <ion-item>
-        <ion-label>Doten Dorji</ion-label>
-      </ion-item>
-      <ion-item>
-          <ion-label>Doten Dorji</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>Doten Dorji</ion-label>
-          </ion-item>
-          <ion-item>
-              <ion-label>Doten Dorji</ion-label>
-              
-            </ion-item>
-            <ion-item>
-                <ion-label>Doten Dorji</ion-label>
-              </ion-item>
+  <ion-grid>
+  <ion-row>
+    <ion-col size="12">
+        <ion-list>
+            <ion-item-sliding>
               <ion-item>
-                  <ion-label>Doten Dorji</ion-label>
-                </ion-item>
-                <ion-item>
-                    <ion-label>Doten Dorji</ion-label>
-                  </ion-item>
-                  <ion-item>
-                      <ion-label>Doten Dorji</ion-label>
-                    </ion-item>
-                    <ion-item>
-                        <ion-label>Doten Dorji</ion-label>
-                      </ion-item>
-                      <ion-item>
-                          <ion-label>Doten Dorji</ion-label>
-                        </ion-item>
-  </ion-list>
-
+                <ion-label>
+                  user 1
+                </ion-label>
+              </ion-item>
+              <ion-item-options side="end">
+                <ion-item-option color="danger">Delete</ion-item-option>
+              </ion-item-options>
+            </ion-item-sliding>
+          </ion-list>
+    
+    </ion-col>
+  </ion-row>
+  </ion-grid>
 </ion-content>
+
+
 <ion-tabs slot="bottom">
   <ion-tab-bar class="bottomtab">
     <ion-tab-button >
