@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { RegisterPage } from '../register/register.page';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
-import { AppRate } from '@ionic-native/app-rate';
 
 
 @Component({

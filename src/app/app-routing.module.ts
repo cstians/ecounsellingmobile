@@ -17,17 +17,10 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'depression-test', loadChildren: './depression-test/depression-test.module#DepressionTestPageModule' },
   { path: 'question-answer', loadChildren: './question-answer/question-answer.module#QuestionAnswerPageModule' },
-  
+  { path: 'chatscreen', loadChildren: './chatscreen/chatscreen.module#ChatscreenPageModule' },  
   { path: 'quotation', loadChildren: './quotation/quotation.module#QuotationPageModule' },
-  { path: 'ask-question', loadChildren: './ask-question/ask-question.module#AskQuestionPageModule' },  { path: 'feedbackpage', loadChildren: './feedbackpage/feedbackpage.module#FeedbackpagePageModule' },
-
-  
-
-  
-
- 
-
-
+  { path: 'ask-question', loadChildren: './ask-question/ask-question.module#AskQuestionPageModule' },
+  { path: 'feedbackpage', loadChildren: './feedbackpage/feedbackpage.module#FeedbackpagePageModule' },
 ];
 
 @NgModule({

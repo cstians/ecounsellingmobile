@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPage } from './login.page';
-import { PassResetPopverComponent } from '../pass-reset-popver/pass-reset-popver.component';
+import { ChatscreenPage } from './chatscreen.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: ChatscreenPage
   }
 ];
 
@@ -22,8 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents: [PassResetPopverComponent],
-  declarations: [LoginPage,PassResetPopverComponent]
+  declarations: [ChatscreenPage]
 })
-export class LoginPageModule {}
-
+export class ChatscreenPageModule {}
