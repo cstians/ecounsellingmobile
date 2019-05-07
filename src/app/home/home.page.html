@@ -1,66 +1,40 @@
  
    <ion-header>
-    <ion-toolbar>    
- 
-        <ion-label style="color:white">Counsellor</ion-label>
-
-
-
-        <ion-tab-button (click)="setting()" class="notbutton">
-            <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff"></ion-icon>
-        </ion-tab-button>
-
-          <ion-tab-button (click)="setting()" class="setbutton">
-              <ion-icon src="./assets/icon/sett.svg" style="color: white"></ion-icon>
-          </ion-tab-button>
-          
-        
-      </ion-toolbar>
+      <ion-toolbar>    
+            
+              <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff" (click)="setting()" class="notify"></ion-icon>
+              <ion-icon src="./assets/icon/sett.svg" style="color: white" class="setting"></ion-icon>
+         </ion-toolbar>
      </ion-header>
     
 <ion-content>
   <ion-grid>
-  <ion-row>
-    <ion-col size="12">
-        <ion-list>
-            <ion-item-sliding>
-              <ion-item>
-                <ion-label>
-                  user 1
-                </ion-label>
-              </ion-item>
-              <ion-item-options side="end">
-                <ion-item-option color="danger">Delete</ion-item-option>
-              </ion-item-options>
+    <ion-row>
+      <ion-col size="12">
+          <ion-list>
+              <ion-item-sliding *ngFor="let item of items">
+             <ion-item>
+             <p>{{item.name}}</p><br>
+             </ion-item>
+             <ion-item-options side="end">
+               <ion-item-option color="danger" (click)="remove(item)">Delete</ion-item-option>
+             </ion-item-options>
             </ion-item-sliding>
-          </ion-list>
-    
-    </ion-col>
-  </ion-row>
+            </ion-list>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+ 
+
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar>
+    <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white" id="chat"></ion-icon>
+    <ion-icon name="help" style="color:white" id="help" (click)="questionans()"></ion-icon>
+    <ion-icon name="add" style="color:white" id="depression" (click)="depression()"></ion-icon>
+    <ion-icon src="./assets/icon/menu.svg" style="color:white" id="menu" (click)="menu()"></ion-icon>
+     
+  </ion-toolbar>
+</ion-footer>
 
-<ion-tabs slot="bottom">
-  <ion-tab-bar class="bottomtab">
-    <ion-tab-button >
-      <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white"></ion-icon>
-      <ion-label style="color:white">Chat</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button (click)="questionans()">
-        <ion-icon name="help" style="color:white"></ion-icon>
-        <ion-label style="color:white">Question</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button (click)="depression()">
-          <ion-icon name="add" style="color:white"></ion-icon>
-          <ion-label style="color:white">Depression</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button (click)="menu()">
-            <ion-icon src="./assets/icon/menu.svg" style="color:white"></ion-icon>
-            <ion-label style="color:white">Menu</ion-label>
-          </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

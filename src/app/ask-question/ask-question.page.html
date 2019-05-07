@@ -4,14 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-<ion-input type="text" [(ngModel)]="question" placeholder="Enter your question"></ion-input><br>
-<ion-textarea [(ngModel)]="description" placeholder="Enter your description" style="width:100%; height:25%" spellcheck="true"></ion-textarea>
-<ion-button expand="full" (click)="Query()" [disabled]="question===''">Submit</ion-button>
-
-<ion-card style="height:25%">
- no answer yet
-</ion-card>
-
-
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Enter your question</ion-label>
+          <ion-input type="text" [(ngModel)]="question"></ion-input>
+        </ion-item>
+        <ion-textarea [(ngModel)]="description" placeholder="Enter your description" style="width:100%; height:25%" spellcheck="true"></ion-textarea>
+        <ion-button expand="full" (click)="Query()" [disabled]="question===''">Submit</ion-button>
+        <ion-card style="height:25%">
+            no answer yet
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

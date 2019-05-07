@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-import { Route, Router } from '@angular/router';
+import { Route, Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home-popover',
@@ -10,15 +10,22 @@ import { Route, Router } from '@angular/router';
 export class HomePopoverComponent implements OnInit {
 
   constructor(public popoverCtrl:PopoverController,private router:Router) { }
-
+  designation='';
   ngOnInit() {}
  
   cancel(){
     this.popoverCtrl.dismiss();
     }
     ok(){
-     this.router.navigateByUrl('/login');
+      let navigationExtras:NavigationExtras={
+        state:{
+        designation:this.designation,
+        }
+      }
+     this.router.navigate(['register'],navigationExtras);
      this.popoverCtrl.dismiss();
+     //this.router.navigateByUrl('/login');
+     
     }
 }
 

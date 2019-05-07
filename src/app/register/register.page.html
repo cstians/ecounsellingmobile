@@ -14,32 +14,40 @@
           
 
           
-            <ion-input type="password" [(ngModel)]="user_cpassword" placeholder=" Confirm Password" name="password"></ion-input><br>
+            <ion-input type="password" [(ngModel)]="user_cpassword" placeholder=" Confirm Password" name="cpassword"></ion-input><br>
       
 
           
               
-              <ion-radio-group>
+              <ion-radio-group [(ngModel)]="gender">
               
               <ion-label>Male</ion-label>
-             <ion-radio value="1" (ionSelect)="gender(1)"></ion-radio>&nbsp;&nbsp;&nbsp;
+             <ion-radio value="Male" ></ion-radio>&nbsp;&nbsp;&nbsp;
   
              <ion-label>Female</ion-label>
-             <ion-radio value="2" (ionSelect)="gender(2)"></ion-radio>&nbsp;&nbsp;&nbsp;
+             <ion-radio value="Female" ></ion-radio>&nbsp;&nbsp;&nbsp;
   
              <ion-label>Others</ion-label>
-             <ion-radio value="3" (ionSelect)="gender(3)"></ion-radio>
+             <ion-radio value="Others" ></ion-radio>
             
             </ion-radio-group>
             <hr style="Border:0.4px solid white;"/>
            
             
         
-            <ion-input type="qualification" [(ngModel)]="qualification" placeholder="Qualification" name="password"></ion-input><br>
+            <ion-input type="qualification" [(ngModel)]="qualification" placeholder="Qualification" name="qualification"></ion-input><br>
+            <ion-radio-group [(ngModel)]="designation">
+              &nbsp;&nbsp;&nbsp;&nbsp;<ion-label>User</ion-label>&nbsp;
+              <ion-radio value="User"></ion-radio>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-label>Peer</ion-label>&nbsp;
+              <ion-radio value="Peer"></ion-radio>
+            </ion-radio-group>
+            <hr style="Border:0.4px solid white;"/>
           
-           <ion-button size="medium"expand="block" (click)="popup()">Next</ion-button>
+           <ion-button size="medium" expand="block" (click)="popup()">Next</ion-button>
       
         </div>
+       
       </ion-col>
     </ion-row>
   </ion-grid>

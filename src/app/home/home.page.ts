@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -12,8 +13,12 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  public items:Array<any>=[];
  
-   constructor(private router:Router){}
+   constructor(private router:Router,private http:HttpClient){
+     this.getUsers();
+   }
 
 
    
@@ -40,6 +45,21 @@ export class HomePage {
        this.router.navigateByUrl('/question-answer')
      }
 
+     getUsers(){
+       this.http.get('http://localhost:8000/api/users').subscribe((data:any)=>{
+
+          this.items=data;
+       });
+     }
+
+     remove(item){
+       for(var i=0;i<this.items.length;i++){
+         if(this.items[i]==item){
+          this.items.splice(i,1); 
+         }
+       }
+
+     }
 
      
    

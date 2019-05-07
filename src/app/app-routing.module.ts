@@ -21,6 +21,8 @@ const routes: Routes = [
   { path: 'quotation', loadChildren: './quotation/quotation.module#QuotationPageModule' },
   { path: 'ask-question', loadChildren: './ask-question/ask-question.module#AskQuestionPageModule' },
   { path: 'feedbackpage', loadChildren: './feedbackpage/feedbackpage.module#FeedbackpagePageModule' },
+
+
 ];
 
 @NgModule({

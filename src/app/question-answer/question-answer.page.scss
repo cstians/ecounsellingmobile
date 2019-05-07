@@ -10,3 +10,27 @@ h5
 .toolbar{
     --background:#3399FF;
 }
+ion-card-header{
+    color: #000000;
+}
+ion-card-content{
+    color: #000000;
+}
+
+ion-card{
+    border:1px solid #3399FF;
+}
+ion-label{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+ion-button{
+    --background:#63C76A;
+    border-radius: 5px;
+    border: 1px #63C76A;
+    padding:1px;
+  
+    
+}

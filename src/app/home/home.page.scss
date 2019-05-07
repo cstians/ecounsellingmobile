@@ -1,11 +1,10 @@
 
-ion-tab-bar{
-    --background: linear-gradient(to bottom,#405C9C,white);
-}
 
 ion-toolbar{
-    --background: linear-gradient(to bottom,#405C9C,white);
+    --background: #3399FF;
+  
 }
+
 
 ion-tab-button{
     --width:10%;
@@ -25,5 +24,55 @@ ion-tab-bar{
 }
 .bottomtab{
     --background:#3399FF;
-  
+}
+
+
+.notify{
+    position: absolute;
+    margin-top: 3px;
+    width: 20px;
+    margin-left: 60%;
+    zoom: 1.6;
+   
+}
+.setting{
+    margin-left: 80%;
+    margin-top: 3px;
+    width: 20px;
+    zoom: 1.6;
+    
+    
+}
+
+#chat{
+    position: absolute;
+    width: 20px;
+    zoom:1.6;
+    margin-left: 4%;
+}
+#help{
+
+    margin-left: 30%;
+    //margin-top: 3px;
+    width: 20px;
+    zoom: 1.6;
+
+
+}
+#depression{
+
+    margin-left: 17%;
+    //margin-top: 3px;
+    width: 20px;
+    zoom: 1.6;
+
+
+}
+#menu{
+    margin-left: 16%;
+    //margin-top: 3px;
+    width: 20px;
+    zoom: 1.6;
+
+   
 }

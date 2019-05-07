@@ -1,5 +1,6 @@
 ion-textarea{
     border: 1px solid #3399FF;
+    height: 90px;
 
 }
 
@@ -7,3 +8,4 @@ ion-textarea{
 ion-input:focus ~ label{
     top: -18px;
 }
+
