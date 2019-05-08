@@ -21,10 +21,8 @@ export class QuestionAnswerPage implements OnInit {
   }
 
   getanswer(){
-    this.http.get('http://localhost:8000/api/answers').subscribe((data:any)=>{
-      var datas=JSON.stringify(data);
-    var d=JSON.parse(datas);
-     this.items=d;
+    this.http.get('http://localhost:8000/api/getquestion').subscribe((data:any)=>{
+       this.items=data;
     });
      
     

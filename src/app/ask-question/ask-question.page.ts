@@ -12,8 +12,11 @@ export class AskQuestionPage implements OnInit {
   question='';
   description='';
   username=''
+  items=[];
 
-  constructor(private http:HttpClient,private navCtrl:NavController) { }
+  constructor(private http:HttpClient,private navCtrl:NavController) { 
+    this.getAnswer();
+  }
 
   Query(){
     let data={
@@ -26,6 +29,13 @@ export class AskQuestionPage implements OnInit {
       console.log(response);
       this.navCtrl.navigateForward('/home');
     })
+  }
+
+
+  getAnswer(){
+    this.http.get('http://localhost:8000/api/getanswer').subscribe((data:any)=>{
+      this.items=data;
+    });
   }
 
   ngOnInit() {

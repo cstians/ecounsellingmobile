@@ -101,7 +101,7 @@ export class RegisterPage implements OnInit {
 
       this.http.post('http://localhost:8000/api/signup', postData).subscribe((response) => {
         console.log(response);
-       this.router.navigateByUrl('/home');
+       this.router.navigateByUrl('/login');
       }, error => {
         console.log(error);
       /*if(JSON.stringify(response['one']) == '"Doten"') {

@@ -11,9 +11,7 @@
         
           <ion-button expand="full" (click)="questionpage()">Ask Question</ion-button>
            <ion-card *ngFor="let item of items" expand="full">
-             <ion-label>Question:</ion-label>
              <ion-card-header>{{item.question}}</ion-card-header>
-             <ion-label>Description:</ion-label>
              <ion-card-content>{{item.description}}</ion-card-content>
            </ion-card>
             

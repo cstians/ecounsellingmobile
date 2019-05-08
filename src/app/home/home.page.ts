@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Params } from '@angular/router'
 
 
 
@@ -15,12 +16,27 @@ import { HttpClient } from '@angular/common/http';
 export class HomePage {
 
   public items:Array<any>=[];
+  usertype:string;
+  type=[];
+ name:string='';
  
-   constructor(private router:Router,private http:HttpClient){
-     this.getUsers();
-   }
+ 
+   constructor(private router:Router,private http:HttpClient,private route:ActivatedRoute){
 
+    this.route.queryParams.subscribe(params=>{
+      if(this.router.getCurrentNavigation().extras.state){
+        this.usertype=this.router.getCurrentNavigation().extras.state.userType;
+        
+      }
 
+      window.localStorage.setItem('type',this.usertype);
+      });
+     this.getUser();
+    }
+
+   
+   
+   
    
      chat()
      {
@@ -32,11 +48,11 @@ export class HomePage {
      }
 
      setting(){
-       this.router.navigateByUrl('/chat');
+       this.router.navigateByUrl('/home');
      }
 
      notify(){
-       this.router.navigateByUrl('/chat');
+       this.router.navigateByUrl('/home');
      }
      depression(){
        this.router.navigateByUrl('/depression-test')
@@ -45,12 +61,45 @@ export class HomePage {
        this.router.navigateByUrl('/question-answer')
      }
 
-     getUsers(){
-       this.http.get('http://localhost:8000/api/users').subscribe((data:any)=>{
-
-          this.items=data;
-       });
+     chatHome(item){
+       let navigationEtras:NavigationExtras={
+         state:{
+           name:item.name
+         }
+       }
+       this.router.navigate(['chatscreen'],navigationEtras);
      }
+
+     getUser(){
+      var typestore=window.localStorage.getItem('type');
+      let data={
+        "type":''+typestore
+      };
+
+      this.http.post('http://localhost:8000/api/users',data).subscribe((data:any)=>{
+           
+        this.items=data;
+        
+       });
+      }
+
+       getUsers(){
+        var typestore=window.localStorage.getItem('type');
+        let data={
+          "type":''+typestore
+        };
+  
+        this.http.post('http://localhost:8000/api/users',data).subscribe((data:any)=>{
+             
+          this.items=data;
+          
+         });
+       }
+     
+      
+
+     
+       
 
      remove(item){
        for(var i=0;i<this.items.length;i++){

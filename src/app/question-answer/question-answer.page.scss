@@ -11,20 +11,19 @@ h5
     --background:#3399FF;
 }
 ion-card-header{
-    color: #000000;
+    color: #1e1e1e;
+    font-weight: bold;
+
 }
 ion-card-content{
-    color: #000000;
+    color: #1e1e1e;
+    font-style: italic;
 }
 
 ion-card{
     border:1px solid #3399FF;
 }
-ion-label{
-    color: red;
-    font-weight: bold;
-    font-size: 15px;
-}
+
 
 ion-button{
     --background:#63C76A;

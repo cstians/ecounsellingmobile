@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController, PopoverController } from '@ionic/angular';
 import { PassResetPopverComponent} from '../pass-reset-popver/pass-reset-popver.component';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class LoginPage implements OnInit {
   user_name: string;
   user_password: string;
+  usertype:string='';
 
   constructor(public navCtrl:NavController,public toastCtrl:ToastController,public popCtrl:PopoverController,private router: Router,private http: HttpClient) { }
 
@@ -30,7 +31,15 @@ export class LoginPage implements OnInit {
 
     this.http.post('http://localhost:8000/api/login', postData).subscribe((response) => {
       console.log(response);
-      this.navCtrl.navigateForward('/home');
+      var userType=JSON.stringify(response['userType']);
+      var type=JSON.parse(userType);
+      let navigationExtras:NavigationExtras={
+       state:{
+         userType:type
+       }
+      }
+      this.router.navigate(['home'],navigationExtras);
+
     }, error => {
       console.log(error);
       /*if(JSON.stringify(response['one']) == '"Doten"') {

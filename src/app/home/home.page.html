@@ -1,7 +1,6 @@
  
    <ion-header>
       <ion-toolbar>    
-            
               <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff" (click)="setting()" class="notify"></ion-icon>
               <ion-icon src="./assets/icon/sett.svg" style="color: white" class="setting"></ion-icon>
          </ion-toolbar>
@@ -11,16 +10,18 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
+          
           <ion-list>
-              <ion-item-sliding *ngFor="let item of items">
-             <ion-item>
-             <p>{{item.name}}</p><br>
+            <ion-item-sliding *ngFor="let item of items">
+             <ion-item (click)="chatHome(item)">
+              <p>{{item.name}}</p><br>
              </ion-item>
              <ion-item-options side="end">
                <ion-item-option color="danger" (click)="remove(item)">Delete</ion-item-option>
              </ion-item-options>
             </ion-item-sliding>
             </ion-list>
+            <div>{{name}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -30,7 +31,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white" id="chat"></ion-icon>
+    <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white" id="chat" (click)="getUsers()"></ion-icon>
     <ion-icon name="help" style="color:white" id="help" (click)="questionans()"></ion-icon>
     <ion-icon name="add" style="color:white" id="depression" (click)="depression()"></ion-icon>
     <ion-icon src="./assets/icon/menu.svg" style="color:white" id="menu" (click)="menu()"></ion-icon>
