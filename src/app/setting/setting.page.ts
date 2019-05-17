@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Content } from '@angular/compiler/src/render3/r3_ast';
+
+
+
 
 @Component({
   selector: 'app-setting',
@@ -6,8 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./setting.page.scss'],
 })
 export class SettingPage implements OnInit {
+ 
+  
+  constructor() {
+    
+   }
 
-  constructor() { }
+   
 
   ngOnInit() {
   }

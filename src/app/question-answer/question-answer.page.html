@@ -1,6 +1,16 @@
 <ion-header>
-  <ion-toolbar class="toolbar">
-    <ion-back-button defaultHref="/home"></ion-back-button>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-col>
+        <ion-col col-5>
+            <ion-title>Questions & Answers</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +24,7 @@
              <ion-card-header>{{item.question}}</ion-card-header>
              <ion-card-content>{{item.description}}</ion-card-content>
            </ion-card>
-            
-          
-        
-      </ion-col>
+          </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

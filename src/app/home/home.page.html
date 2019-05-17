@@ -1,8 +1,8 @@
  
    <ion-header>
       <ion-toolbar>    
-              <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff" (click)="setting()" class="notify"></ion-icon>
-              <ion-icon src="./assets/icon/sett.svg" style="color: white" class="setting"></ion-icon>
+              <ion-icon src="./assets/icon/notify.svg" style="color: #ffffff" class="notify"></ion-icon>
+              <ion-icon src="./assets/icon/sett.svg" (click)="setting()" style="color: white" class="setting"></ion-icon>
          </ion-toolbar>
      </ion-header>
     
@@ -25,16 +25,21 @@
       </ion-col>
     </ion-row>
   </ion-grid>
- 
+ <div>{{try}}</div>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
+    
     <ion-icon src="./assets/icon/chat.svg" style="color: white" style="color:white" id="chat" (click)="getUsers()"></ion-icon>
+    <span id="chatlabel">Chat</span>
     <ion-icon name="help" style="color:white" id="help" (click)="questionans()"></ion-icon>
+    <span id="questionlabel">Question</span>
     <ion-icon name="add" style="color:white" id="depression" (click)="depression()"></ion-icon>
+    <span id="depressionlabel">Test</span>
     <ion-icon src="./assets/icon/menu.svg" style="color:white" id="menu" (click)="menu()"></ion-icon>
+    <span id="menulabel">Menu</span>
      
   </ion-toolbar>
 </ion-footer>

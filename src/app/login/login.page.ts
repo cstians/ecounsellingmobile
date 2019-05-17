@@ -15,11 +15,16 @@ export class LoginPage implements OnInit {
   user_password: string;
   usertype:string='';
 
+  passwordType:string='password';
+  passwordShown:boolean=false;
+
   constructor(public navCtrl:NavController,public toastCtrl:ToastController,public popCtrl:PopoverController,private router: Router,private http: HttpClient) { }
 
   register() {
     this.navCtrl.navigateForward('/register');
   }
+
+ 
 
   async logIn() {
     
@@ -33,9 +38,14 @@ export class LoginPage implements OnInit {
       console.log(response);
       var userType=JSON.stringify(response['userType']);
       var type=JSON.parse(userType);
+
+
+      var user=JSON.stringify(response['authUser']);
+      var authUser=JSON.parse(user);
       let navigationExtras:NavigationExtras={
        state:{
-         userType:type
+         userType:type,
+         authUser:authUser
        }
       }
       this.router.navigate(['home'],navigationExtras);
@@ -76,6 +86,20 @@ export class LoginPage implements OnInit {
     });
     
     return await popover.present();
+  }
+
+  public togglePassword(){
+
+    if(this.passwordShown){
+      this.passwordShown=false;
+      this.passwordType='password';
+    }
+    else{
+      this.passwordShown=true;
+      this.passwordType='text';
+      
+    }
+
   }
 
   ngOnInit() {

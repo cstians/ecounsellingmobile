@@ -1,10 +1,22 @@
 
+ion-toolbar{
+    --background:#34495E;
+}
+ion-title{
+    position: absolute;
+    color:white;
+    margin-left: -90px;
+    margin-top: 5px;
+}
+ion-back-button{
+    color: white;
+}
 .feed_div{
     text-align: center;
 }
 
 ion-icon{
-    color: #3399ff;
+    color: #009688;
 }
 
 
@@ -12,4 +24,7 @@ ion-textarea{
     height: 30%;
     border: 1px solid #3399ff;
     border-radius: 20px;
+}
+ion-button{
+    --background:#0EB7CC;
 }

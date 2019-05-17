@@ -2,7 +2,8 @@
 
 .main
 {
---background: url(../../assets/img/image5.jpg);
+//--background: url(../../assets/img/image5.jpg);
+--background: #434458;
 background-size: cover;
 background-position: center;
 background: transparent;
@@ -15,6 +16,7 @@ ion-grid{
 
 #logo
 {
+
 width:40%;
 height:40%;
 border-radius: 50%;
@@ -30,10 +32,12 @@ margin-left: 30%;
 
     
     padding: 20px;
-    width:245px;
     height: 20%;
     color: white;
-    border-bottom:1px solid white;
+    border-bottom:1px solid #0EB7CC;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
    
    
     
@@ -45,10 +49,11 @@ margin-left: 30%;
 
    
     padding: 20px;
-    width: 245px;
     height: 20%;
     color: white;
-    border-bottom:1px solid white;
+    border-bottom:1px solid #0EB7CC;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
   
 
 }
@@ -80,19 +85,31 @@ ion-button span{
     --background:#3399FF;
 }
 ion-button{
-    --background:#63C76A;
+    --background:#0EB7CC;
     
     
 
     
+}
+.forgotpass{
+    position:absolute;
+    margin-left: 15%;
+    text-decoration: none;
+    color: #0EB7CC;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 }
 
 
 .Login{
     
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.1);
 }
 
+#eyeicon{
+    position: absolute;
+    margin-left: 90%;
+}
     
     
 

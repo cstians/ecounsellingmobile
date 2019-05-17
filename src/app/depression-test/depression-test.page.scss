@@ -1,12 +1,29 @@
+ion-toolbar{
+    --background:#34495E;
+}
+
+ion-title{
+    position: absolute;
+    color: white;
+    margin-left: -90px;
+    margin-top: 5px;
+
+}
+ion-back-button{
+    color: white;
+}
+
 .question{
     border: solid purple;
     
 }
 
-.toolbar{
-    --background:#3399FF;
-}
+
 
 ion-item{
     --border-bottom: none;
+}
+
+ion-button{
+    --background:#0EB7CC;
 }

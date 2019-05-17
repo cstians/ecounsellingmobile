@@ -1,19 +1,16 @@
 .main_register{
-    --background: url(../../assets/img/image5.jpg);
+   // --background: url(../../assets/img/image5.jpg);
+   --background:white;
       background-size: cover;
       background-position: center;
-      background: transparent;
+     
 
 
 }
-      
-.register_div_class{
-    background: rgba(1, 1, 1, 0.5);
-    margin-top: 60%;
-}
+
 
 ion-button{
-    --background:#E78408;
+    --background:#0EB7CC;
 }
 
 ion-content{
@@ -25,14 +22,34 @@ ion-content{
 }
 ion-radio-group{
     
-    color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 }
 ion-input{
-    color: white;
-    border-bottom:2px solid white;
+    color: black;
+    border-bottom:2px solid #0EB7CC; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    
 
+
+}
+ion-label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
 }
 
 ion-radio-group ion-radio{
     color: white;
 }
+ion-item{
+    --background:black; 
+    height: 60px;
+    color: white;
+}
+ion-grid{
+    margin-top: 20%;
+}
+
+

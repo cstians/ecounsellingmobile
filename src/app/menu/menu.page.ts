@@ -28,7 +28,7 @@ export class MenuPage implements OnInit {
   }
 
   mVideo(){
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/motivation');
   }
 
   qoute(){
@@ -43,8 +43,8 @@ export class MenuPage implements OnInit {
     this.router.navigateByUrl('/home');
   }
 
-  rate(){
-    this.router.navigateByUrl('/home');
+  stories(){
+    this.router.navigateByUrl('/success-stories');
   }
   menu_Home(){
     this.router.navigateByUrl('/home');

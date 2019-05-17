@@ -1,0 +1,20 @@
+
+<ion-content>
+<div class="instruction">
+    <ion-card [(ngModel)]="card1" [hidden]="card1==='c1'" id="cardOne">
+        <ion-card-header>Anonymous</ion-card-header>
+        <ion-card-content>As our app focus on anonimity, give unique username to maintain anonimity</ion-card-content>
+      </ion-card>
+      <ion-card [(ngModel)]="card2" [hidden]="card2==='c2'" id="cardTwo">
+          <ion-card-header>Who amm i?</ion-card-header>
+          <ion-card-content>Please select User radio button if u are seeker and if you are potential counsellor do select Peer radio button</ion-card-content>
+      </ion-card>
+      <ion-card [(ngModel)]="card3" [hidden]="card3==='c3'" id="cardThree">
+          <ion-card-header>header 8</ion-card-header>
+          <ion-card-content>content 3</ion-card-content>
+      </ion-card>
+     <ion-button expand="full" [(ngModel)]="but1" (click)="button1()" [hidden]="but1==='but1'">Double click it</ion-button>
+     <ion-button expand="full" (click)="button2()" [(ngModel)]="but2" [hidden]="but2==='but2'">Double click it</ion-button>
+     <ion-button expand="full" (click)="button3()" [(ngModel)]="but3" [hidden]="but3==='but3'">Double click it</ion-button>
+    </div>
+</ion-content>

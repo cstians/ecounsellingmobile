@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Params } from '@angular/router'
-
-
-
-
+import {SQLite} from '@ionic-native/sqlite';
 
 
 @Component({
@@ -17,21 +13,30 @@ export class HomePage {
 
   public items:Array<any>=[];
   usertype:string;
+  authUser:string;
   type=[];
  name:string='';
+ try:string='';
+ public sqlitestorage:any=null;
  
  
    constructor(private router:Router,private http:HttpClient,private route:ActivatedRoute){
-
+  
     this.route.queryParams.subscribe(params=>{
       if(this.router.getCurrentNavigation().extras.state){
         this.usertype=this.router.getCurrentNavigation().extras.state.userType;
+        this.authUser=this.router.getCurrentNavigation().extras.state.authUser;
         
       }
-
-      window.localStorage.setItem('type',this.usertype);
+     window.localStorage.setItem('type',this.usertype);
+     window.localStorage.setItem('user',this.authUser);
       });
      this.getUser();
+
+
+     //sqlite
+   
+    
     }
 
    
@@ -48,7 +53,7 @@ export class HomePage {
      }
 
      setting(){
-       this.router.navigateByUrl('/home');
+       this.router.navigateByUrl('/setting');
      }
 
      notify(){
@@ -57,30 +62,55 @@ export class HomePage {
      depression(){
        this.router.navigateByUrl('/depression-test')
      }
+
      questionans(){
-       this.router.navigateByUrl('/question-answer')
+       var authuser=window.localStorage.getItem('user');
+       var user='User';
+       var peer='Peer';
+       
+       let navigationEtras:NavigationExtras={
+         state:{
+           authuser:authuser
+
+         }
+       }
+       var Type=window.localStorage.getItem('type');
+       if(Type===''+user){
+       this.router.navigate(['peer-view-questions'],navigationEtras);
+       }
+       else{
+        this.router.navigate(['question-answer'],navigationEtras);
+       }
      }
 
      chatHome(item){
+       this.authUser=window.localStorage.getItem('user');
        let navigationEtras:NavigationExtras={
          state:{
-           name:item.name
+           name:item.name,
+           authUser:this.authUser
          }
        }
+      
        this.router.navigate(['chatscreen'],navigationEtras);
      }
 
      getUser(){
+       
+   
+    
       var typestore=window.localStorage.getItem('type');
-      let data={
-        "type":''+typestore
-      };
+      
+    let data={
+      "type":''+typestore
+    };
 
-      this.http.post('http://localhost:8000/api/users',data).subscribe((data:any)=>{
-           
-        this.items=data;
-        
-       });
+    this.http.post('http://localhost:8000/api/getuser',data).subscribe((data:any)=>{
+         
+      this.items=data;
+      
+     });
+      
       }
 
        getUsers(){

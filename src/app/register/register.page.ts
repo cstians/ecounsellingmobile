@@ -4,7 +4,6 @@ import { ToastController } from '@ionic/angular';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { RegisterPageModule } from './register.module';
-import { ok } from 'assert';
 import { HomePopoverComponent } from '../home-popover/home-popover.component';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  socket:any;
   user_name:string="";
   user_password:string="";
   user_cpassword:string="";
