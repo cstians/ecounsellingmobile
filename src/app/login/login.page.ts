@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, PopoverController } from '@ionic/angular';
-import { PassResetPopverComponent} from '../pass-reset-popver/pass-reset-popver.component';
+import { NavController, ToastController} from '@ionic/angular';
+
 import { Router, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,15 +17,12 @@ export class LoginPage implements OnInit {
   passwordType:string='password';
   passwordShown:boolean=false;
 
-  constructor(public navCtrl:NavController,public toastCtrl:ToastController,public popCtrl:PopoverController,private router: Router,private http: HttpClient) { }
+  constructor(public navCtrl:NavController,public toastCtrl:ToastController,private router: Router,private http: HttpClient) { }
 
-  register() {
-    this.navCtrl.navigateForward('/register');
-  }
-
+  
  
 
-  async logIn() {
+  logIn() {
     
     
     let postData = {
@@ -79,14 +75,12 @@ export class LoginPage implements OnInit {
     } */ 
   }
 
-  async pop(event){
-    const popover= await this.popCtrl.create({
-      component:PassResetPopverComponent,
-      event
-    });
-    
-    return await popover.present();
+  register() {
+    this.navCtrl.navigateForward('/register');
   }
+
+
+
 
   public togglePassword(){
 

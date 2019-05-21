@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import * as io from 'socket.io-client';
-import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -24,7 +23,7 @@ export class ChatscreenPage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public toastCtrl:ToastController,private route:ActivatedRoute,private router:Router) {
-    this.socket = io('http://localhost:2000');
+    
     this.route.queryParams.subscribe(params=>{
       if(this.router.getCurrentNavigation().extras.state){
         this.name=this.router.getCurrentNavigation().extras.state.name;
@@ -39,9 +38,7 @@ export class ChatscreenPage implements OnInit {
 });
 
 
-   this.getMessage().subscribe(data=>{
-     this.messages.push(data);
-   })
+this.socket = io('http://localhost:2000');
     
   
   }
@@ -54,27 +51,28 @@ export class ChatscreenPage implements OnInit {
     
     this.sender=window.localStorage.getItem('sender');
     this.name=window.localStorage.getItem('reciever');
-    if(this.chat_input!=' ' && this.authName!='' && this.name!=''){
+    
     let data={
       message:this.chat_input,
       sender:this.sender,
       reciever:this.name
     }
+
+    this.socket.emit('users',data);
     
-    this.socket.emit('add',data);
-    }
     this.chat_input ='';
   }
     
 
-  getMessage(){
-    let observable=new Observable(observer=>{
-     this.socket.on('sendmessage',(data)=>{
-       observer.next(data);
-     });
-    });
-    return observable;
+  add(){
+    let data={
+      name:'adoten'
+    }
+
+    this.socket.emit('adduser',data);
   }
+
+ 
   //getMessages() {
     //let observable =new Observable(observer => {
      // this.socket.on('message', (data) => {

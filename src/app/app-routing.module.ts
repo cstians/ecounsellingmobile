@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
- 
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },

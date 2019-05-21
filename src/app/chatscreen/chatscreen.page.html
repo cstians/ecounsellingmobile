@@ -4,7 +4,7 @@
   
   <ion-title style="text-align:center">
   
- <span>Reciver:{{username}}</span> 
+ <span>Receiver:{{username}}</span> 
  <span>sender:{{sender}}</span> 
   
   </ion-title>
@@ -21,6 +21,7 @@
   <ion-col size="12" *ngFor="let message of messages">
 
     <span>{{message.message}}</span>
+    <ion-button (click)="add()">Add</ion-button>
 
   </ion-col>
 </ion-row>
@@ -41,18 +42,18 @@
   <ion-row class="message_row">
   
   <ion-col col-9>
-  
+ 
   <ion-item no-lines>
   
   <ion-input type="text" placeholder="Enter Message" [(ngModel)]="chat_input"> </ion-input>
   
   </ion-item>
-  
+   
   </ion-col>
   
   <ion-col col-3>
   
-  <ion-button (click)="send()">Send</ion-button>
+  <ion-button (click)="send()" [disabled]="chat_input === ''">Send</ion-button>
   
   </ion-col>
   

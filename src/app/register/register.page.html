@@ -13,9 +13,7 @@
             <ion-input type="password" [(ngModel)]="user_password" placeholder="Password" name="password"></ion-input><br>
             <ion-input type="password" [(ngModel)]="user_cpassword" placeholder="Re-enter Password" name="cpassword"></ion-input><br>
             
-            
-            
-            
+          
             &nbsp;&nbsp;<ion-label>Gender:</ion-label><br><br>  
               <ion-radio-group [(ngModel)]="gender">
               <ion-radio value="Male" ></ion-radio>&nbsp;
@@ -42,12 +40,11 @@
             </ion-radio-group>
             <hr style="Border:0.4px solid white;"/>
           
-           <ion-button size="medium" expand="block" (click)="popup()">Submit</ion-button>
+           <ion-button size="medium" expand="full" (click)="popup()">Submit</ion-button>
       
           </div>
        
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

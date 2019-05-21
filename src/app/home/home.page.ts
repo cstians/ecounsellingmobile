@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import {SQLite} from '@ionic-native/sqlite';
+
 
 
 @Component({
@@ -17,7 +17,7 @@ export class HomePage {
   type=[];
  name:string='';
  try:string='';
- public sqlitestorage:any=null;
+
  
  
    constructor(private router:Router,private http:HttpClient,private route:ActivatedRoute){
@@ -32,9 +32,6 @@ export class HomePage {
      window.localStorage.setItem('user',this.authUser);
       });
      this.getUser();
-
-
-     //sqlite
    
     
     }
