@@ -1,6 +1,16 @@
 <ion-header>
-  <ion-toolbar class="toolbar">
-    <ion-back-button defaultHref="/home"></ion-back-button>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-col>
+        <ion-col>
+          <ion-title>Depression Test</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     
   </ion-toolbar>
 </ion-header>
@@ -14,7 +24,7 @@
 
           <ion-button expand="full" (click)="yes()" [(ngModel)]="hide" [hidden]="hide==='hide'">Yes</ion-button>
          
-          <ion-button expand="full" (click)="no()" [(ngModel)]="hide" [hidden]="hideno==='hide'" >No</ion-button>
+          <ion-button expand="full" (click)="no()" [(ngModel)]="hideno" [hidden]="hideno==='hide'" >No</ion-button>
           <ion-button expand="full" (click)="back()">{{toggle}}</ion-button>
           
       </ion-col>

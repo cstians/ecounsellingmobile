@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class DepressionTestPage implements OnInit {
   toggle:string='Go to Home';
-  question:string="1.Does the person has depression?";
+  question1:string="1.Does the person has depression?";
+  question:string=" "+this.question1;
   subquestion:string="1.1 Has the person had at least one of the following core symptoms of depression for at least 2 weeks?";
   question2yes:string='2. Has the person had several of the following additional symptoms for atleast 2 weeks';
 
@@ -42,6 +43,7 @@ export class DepressionTestPage implements OnInit {
   question10no='Do not manage for depression.'
 
   hide:string='';
+  hideno:string;
   
  
 
@@ -98,13 +100,15 @@ export class DepressionTestPage implements OnInit {
     }
   }
 
-  no(){
-    if(this.question=="1.Does the person has depression?"){
-      this.question=''+this.questionno1;
-      this.subquestion="";
-      this.toggle='Go to Home';
 
+
+  no(){
+    if(this.question==''+this.question){
+      this.question=''+this.questionno1;
+      this.subquestion=" ";
+      this.toggle='Go to Home';
       this.hide='hide';
+      this.hideno='hide';
       
     }
 

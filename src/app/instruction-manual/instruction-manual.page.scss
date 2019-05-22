@@ -1,0 +1,27 @@
+.instruction{
+   position: absolute;
+   margin-top: 60%;
+   width: 90%;
+   margin-left: 5%;
+   height: 70%;
+}
+
+
+
+#cardOne{
+    background: white;
+    height: 40%;
+}
+
+#cardTwo{
+    background: red;
+    height: 40%;
+}
+#cardThree{
+    background: cyan;
+    height: 40%;
+}
+ion-button{
+    width: 90%;
+    margin-left: 5%;
+}

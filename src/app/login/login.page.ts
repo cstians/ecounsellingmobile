@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController, PopoverController } from '@ionic/angular';
-import { PassResetPopverComponent} from '../pass-reset-popver/pass-reset-popver.component';
+import { NavController, ToastController} from '@ionic/angular';
+
 import { Router, NavigationExtras } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -15,13 +14,15 @@ export class LoginPage implements OnInit {
   user_password: string;
   usertype:string='';
 
-  constructor(public navCtrl:NavController,public toastCtrl:ToastController,public popCtrl:PopoverController,private router: Router,private http: HttpClient) { }
+  passwordType:string='password';
+  passwordShown:boolean=false;
 
-  register() {
-    this.navCtrl.navigateForward('/register');
-  }
+  constructor(public navCtrl:NavController,public toastCtrl:ToastController,private router: Router,private http: HttpClient) { }
 
-  async logIn() {
+  
+ 
+
+  logIn() {
     
     
     let postData = {
@@ -33,9 +34,14 @@ export class LoginPage implements OnInit {
       console.log(response);
       var userType=JSON.stringify(response['userType']);
       var type=JSON.parse(userType);
+
+
+      var user=JSON.stringify(response['authUser']);
+      var authUser=JSON.parse(user);
       let navigationExtras:NavigationExtras={
        state:{
-         userType:type
+         userType:type,
+         authUser:authUser
        }
       }
       this.router.navigate(['home'],navigationExtras);
@@ -69,13 +75,25 @@ export class LoginPage implements OnInit {
     } */ 
   }
 
-  async pop(event){
-    const popover= await this.popCtrl.create({
-      component:PassResetPopverComponent,
-      event
-    });
-    
-    return await popover.present();
+  register() {
+    this.navCtrl.navigateForward('/register');
+  }
+
+
+
+
+  public togglePassword(){
+
+    if(this.passwordShown){
+      this.passwordShown=false;
+      this.passwordType='password';
+    }
+    else{
+      this.passwordShown=true;
+      this.passwordType='text';
+      
+    }
+
   }
 
   ngOnInit() {

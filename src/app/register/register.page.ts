@@ -3,9 +3,6 @@ import { PopoverController, NavController} from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { RegisterPageModule } from './register.module';
-import { ok } from 'assert';
-import { HomePopoverComponent } from '../home-popover/home-popover.component';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -14,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+ 
   user_name:string="";
   user_password:string="";
   user_cpassword:string="";
@@ -33,7 +31,7 @@ export class RegisterPage implements OnInit {
     
    }
 
-  async popup(event){
+  async popup(){
 
     if(this.user_name==""){
       const toast= await this.toastCtrl.create({

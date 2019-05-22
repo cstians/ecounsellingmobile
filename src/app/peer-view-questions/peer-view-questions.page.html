@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>peer-view-questions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-card *ngFor="let item of items">
+     <ion-card-header>{{item.question}}</ion-card-header>
+     <ion-card-content>{{item.answer}}</ion-card-content>
+   </ion-card>
+
+</ion-content>

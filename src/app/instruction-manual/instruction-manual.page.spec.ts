@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePopoverComponent } from './home-popover.component';
+import { InstructionManualPage } from './instruction-manual.page';
 
-describe('HomePopoverPage', () => {
-  let component: HomePopoverComponent;
-  let fixture: ComponentFixture<HomePopoverComponent>;
+describe('InstructionManualPage', () => {
+  let component: InstructionManualPage;
+  let fixture: ComponentFixture<InstructionManualPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePopoverComponent ],
+      declarations: [ InstructionManualPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePopoverComponent);
+    fixture = TestBed.createComponent(InstructionManualPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

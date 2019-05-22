@@ -1,55 +1,50 @@
-
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/login"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
 <ion-content class="main_register">
   <ion-grid>
     <ion-row>
       <ion-col size="12">
         
-        <div padding class="register_div_class">
-        
-            <ion-input type="text" [(ngModel)]="user_name" placeholder="Username" name="uusename"></ion-input>
-        
-  
-       
-            <ion-input type="password" [(ngModel)]="user_password" placeholder="Password" name="password"></ion-input>
+         <div class="register_div_class">
+            <ion-input type="text" [(ngModel)]="user_name" placeholder="Username" name="uusename"></ion-input><br>
+            <ion-input type="password" [(ngModel)]="user_password" placeholder="Password" name="password"></ion-input><br>
+            <ion-input type="password" [(ngModel)]="user_cpassword" placeholder="Re-enter Password" name="cpassword"></ion-input><br>
+            
           
-
-          
-            <ion-input type="password" [(ngModel)]="user_cpassword" placeholder=" Confirm Password" name="cpassword"></ion-input><br>
-      
-
-          
-              
+            &nbsp;&nbsp;<ion-label>Gender:</ion-label><br><br>  
               <ion-radio-group [(ngModel)]="gender">
-              
-              <ion-label>Male</ion-label>
-             <ion-radio value="Male" ></ion-radio>&nbsp;&nbsp;&nbsp;
-  
-             <ion-label>Female</ion-label>
-             <ion-radio value="Female" ></ion-radio>&nbsp;&nbsp;&nbsp;
-  
+              <ion-radio value="Male" ></ion-radio>&nbsp;
+              <ion-label>Male</ion-label><br><br>
+             
+              <ion-radio value="Female" ></ion-radio>&nbsp;
+              <ion-label>Female</ion-label><br><br>
+              <ion-radio value="Others" ></ion-radio>&nbsp;
              <ion-label>Others</ion-label>
-             <ion-radio value="Others" ></ion-radio>
+            
             
             </ion-radio-group>
-            <hr style="Border:0.4px solid white;"/>
+            <hr style="Border:0.4px solid #0EB7CC;"/><br>
+            <ion-input type="qualification" [(ngModel)]="qualification" placeholder="Qualification" name="qualification"></ion-input><br>
            
             
-        
-            <ion-input type="qualification" [(ngModel)]="qualification" placeholder="Qualification" name="qualification"></ion-input><br>
+          
+            &nbsp;&nbsp;<ion-label>Role:</ion-label><br><br> 
             <ion-radio-group [(ngModel)]="designation">
-              &nbsp;&nbsp;&nbsp;&nbsp;<ion-label>User</ion-label>&nbsp;
-              <ion-radio value="User"></ion-radio>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-label>Peer</ion-label>&nbsp;
-              <ion-radio value="Peer"></ion-radio>
+                <ion-radio value="User"></ion-radio>&nbsp;
+              <ion-label>User</ion-label><br><br>
+              <ion-radio value="Peer"></ion-radio>&nbsp;
+             <ion-label>Peer</ion-label>&nbsp;
             </ion-radio-group>
             <hr style="Border:0.4px solid white;"/>
           
-           <ion-button size="medium" expand="block" (click)="popup()">Next</ion-button>
+           <ion-button size="medium" expand="full" (click)="popup()">Submit</ion-button>
       
-        </div>
+          </div>
        
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

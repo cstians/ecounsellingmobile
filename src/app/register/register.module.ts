@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RegisterPage } from './register.page';
-import { HomePopoverComponent } from '../home-popover/home-popover.component';
+
 
 const routes: Routes = [
   {
@@ -27,8 +27,8 @@ const routes: Routes = [
       }
     ])
   ],
-  entryComponents: [HomePopoverComponent],
-  declarations: [RegisterPage,HomePopoverComponent],
+  entryComponents: [],
+  declarations: [RegisterPage],
   
 })
 export class RegisterPageModule {}

@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { LoginPage } from './login.page';
-import { PassResetPopverComponent } from '../pass-reset-popver/pass-reset-popver.component';
+
 
 const routes: Routes = [
   {
@@ -22,8 +22,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents: [PassResetPopverComponent],
-  declarations: [LoginPage,PassResetPopverComponent]
+  entryComponents: [],
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}
 

@@ -1,6 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ask-question</ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-back-button defaultHref="/question-answer"></ion-back-button>
+        </ion-col>
+        <ion-col>
+            <ion-title>Ask Questions</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +24,9 @@
         <ion-textarea [(ngModel)]="description" placeholder="Enter your description" style="width:100%; height:25%" spellcheck="true"></ion-textarea>
         <ion-button expand="full" (click)="Query()" [disabled]="question===''">Submit</ion-button>
         <ion-card style="height:25%" *ngFor="let item of items">
+          <p>{{item.question}}</p>
           <p>{{item.answer}}</p>
+         
         </ion-card>
       </ion-col>
     </ion-row>

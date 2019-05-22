@@ -1,6 +1,15 @@
 <ion-header>
-  <ion-toolbar class="toolbar">
-      <ion-back-button slot="start" defaultHref="./assets/icon/back.svg" (click)="menu_Home()"></ion-back-button>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-col>
+        <ion-col>
+          <ion-title>Menu</ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>   
 
@@ -35,8 +44,8 @@
         
       
                <div class="rateicon">
-                <ion-icon src="./assets/icon/rate.svg" (click)="rate()" style="zoom:5"></ion-icon><br>
-                <ion-label style="margin-left:13%">Rate</ion-label>
+                <ion-icon src="./assets/icon/success.svg" (click)="stories()" style="zoom:5"></ion-icon><br>
+                <ion-label style="margin-left:3%">Success Stories</ion-label>
               </div>
           
       

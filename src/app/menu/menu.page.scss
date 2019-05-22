@@ -1,3 +1,17 @@
+ion-toolbar{
+    --background:#34495E;
+}
+
+ion-title{
+    position: absolute;
+    color: white;
+    margin-left: -90px;
+    margin-top: 5px;
+}
+
+ion-back-button{
+    color: white;
+}
 ion-button{
     width: 70%;
 
@@ -8,9 +22,7 @@ ion-item ion-label{
 ion-item ion-icon{
     color:white;
 }
-.toolbar{
-    --background:#3399FF;
-}
+
 
 ion-button ion-icon{
     position: absolute;
@@ -46,9 +58,13 @@ ion-icon{
     position: absolute;
     margin-top: 105%
 }
+
 .abouticon{
     position: absolute;
     margin-top: 105%;
     margin-left: 69%;
 
+}
+ion-icon{
+    color: #009688;
 }

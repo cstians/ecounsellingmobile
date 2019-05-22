@@ -1,5 +1,15 @@
-.toolbar{
-    --background:#3399FF;
+ion-toolbar{
+    --background:#34495E;
+}
+ion-title{
+    position: absolute;
+    color: white;
+    margin-left: -90px;
+    margin-top: 5px;
+}
+
+ion-back-button{
+    color: white;
 }
 
 div{

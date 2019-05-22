@@ -3,9 +3,11 @@
   <ion-toolbar color="primary">
   
   <ion-title style="text-align:center">
-  
-  Chat App
-  
+<!--
+ <span>Receiver:{{username}}</span> 
+ <span>sender:{{sender}}</span> 
+  -->
+  <span>da7a2d9</span>
   </ion-title>
   
   </ion-toolbar>
@@ -15,13 +17,61 @@
   <ion-content padding>
   
   <ion-grid>
+ 
+<ion-row>
+    <ion-col col-9 class="my_message">
+        <span>Hi</span>
+      </ion-col>
+</ion-row>
+<ion-row>
+      <ion-col col-9 class="other_message">
+          <span>Hello</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9 class="my_message">
+            <span>How are you?</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col offset-3 col-9 class="other_message">
+              <span>I am doing good. Whats new with you?</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-9 class="my_message">
+                <span>Just a little depressed these days</span>
+              </ion-col>
+</ion-row>
+
+<!--<ion-col col-9 *ngIf="message.sender!=='user'" id="receiver">
+ <span>{{message.sender }}: {{message.message}}</span>
+  </ion-col>
+
+  <ion-col offset-3 col-9 *ngIf="message.sender==='user'" id="sender">
+      <span>{{message.sender }}: {{message.message}}</span>
+  </ion-col>
+</ion-row>-->
+<!--
+<ion-row *ngFor="let message of messages">
   
-  <ion-row *ngFor="let message of chats">
+    <ion-col col-9 *ngIf="message.receiver==user" [ngClass]="{'my_message':message.sender===user,'other_message':message.sender!==user}"> 
+      <span>{{message.message}}</span>
+    </ion-col>
+
+    <ion-col offset-3 col-9 *ngIf="message.sender===user"  [ngClass]="{'my_message':message.sender!==user,'other_message':message.sender===user}"> 
+      <span>{{message.message}}</span>
+    </ion-col>
+  </ion-row>
+-->
+    
   
-  <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+    
+
+  
+  
   
 
-  </ion-row>
   
   </ion-grid>
   </ion-content>
@@ -33,22 +83,18 @@
   <ion-row class="message_row">
   
   <ion-col col-9>
-  
+ 
   <ion-item no-lines>
   
   <ion-input type="text" placeholder="Enter Message" [(ngModel)]="chat_input"> </ion-input>
   
   </ion-item>
-  
+   
   </ion-col>
   
   <ion-col col-3>
   
-  <button ion-button clear color="primary" (click)="send(chat_input)">
-  
-  Send
-  
-  </button>
+  <ion-button (click)="send()" [disabled]="chat_input === ''">Send</ion-button>
   
   </ion-col>
   

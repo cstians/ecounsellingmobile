@@ -1,4 +1,4 @@
-page-home {
+
 
     .message_row {
     
@@ -20,16 +20,17 @@ page-home {
     
     .my_message {
     
-    background: color(#FFF, primary) !important;
-    
-    color: #000 !important;
+    background: #007acc !important;   
+    color: #fff !important;
+    text-align: right;
+    width: 20px;
     
     }
     
     .other_message {
     
-    background: #0000ff !important;
-    
+    background: gray !important;
+    text-align: left;
     color: #000 !important;
     
     }
@@ -43,4 +44,5 @@ page-home {
     font-size: small;
     
     }
-    }
+
+  

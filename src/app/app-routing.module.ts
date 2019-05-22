@@ -5,11 +5,10 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { File } from '@ionic-native/file/ngx';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'chatscreen', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
- 
   { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
   { path: 'setting', loadChildren: './setting/setting.module#SettingPageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
@@ -21,6 +20,12 @@ const routes: Routes = [
   { path: 'quotation', loadChildren: './quotation/quotation.module#QuotationPageModule' },
   { path: 'ask-question', loadChildren: './ask-question/ask-question.module#AskQuestionPageModule' },
   { path: 'feedbackpage', loadChildren: './feedbackpage/feedbackpage.module#FeedbackpagePageModule' },
+  { path: 'motivation', loadChildren: './motivation/motivation.module#MotivationPageModule' },
+  { path: 'peer-view-questions', loadChildren: './peer-view-questions/peer-view-questions.module#PeerViewQuestionsPageModule' },
+  { path: 'success-stories', loadChildren: './success-stories/success-stories.module#SuccessStoriesPageModule' },
+  { path: 'instruction-manual', loadChildren: './instruction-manual/instruction-manual.module#InstructionManualPageModule' },
+
+
 
 
 ];

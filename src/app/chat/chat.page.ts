@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-chat',
@@ -6,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
-  question:string=""
+ socket:any;
+name='dorji'
+  constructor() { 
+    this.socket=io('http://localhost:2000');
+  }
 
-  constructor() { }
+  add(){
+    let data={
+      name:''+name
+    }
+
+    this.socket('add',data);
+  }
 
   ngOnInit() {
   }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as crypto from 'crypto-js';
 
 @Component({
   selector: 'app-chatscreen',
@@ -16,8 +18,14 @@ export class ChatscreenPage implements OnInit {
   messages = [];
   nickname = '';
   message = '';
+  name:string;
+  authName:string;
+  //username:string='';
+  //sender:string='';
+  user='';
 
-  constructor(public navCtrl: NavController, public toastCtrl:ToastController) {
+
+  constructor(public navCtrl: NavController, public toastCtrl:ToastController,private route:ActivatedRoute,private router:Router) {
     this.socket = io('http://localhost:3000');
     this.socket.on('message', (msg) => {
       console.log("message", msg);
@@ -31,28 +39,53 @@ export class ChatscreenPage implements OnInit {
     this.getUsers().subscribe(data => {
       let user = data['user'];
     });
+
+    
+    this.route.queryParams.subscribe(params=>{
+      if(this.router.getCurrentNavigation().extras.state){
+        this.name=this.router.getCurrentNavigation().extras.state.name;
+        this.authName=this.router.getCurrentNavigation().extras.state.authUser;
+      }
+      //this.username=''+this.name;
+      //this.sender=''+this.authName;
+      this.user=''+this.authName;
+      window.localStorage.setItem('sender',this.authName);
+      window.localStorage.setItem('reciever',this.name);
+
+      
+
+    });
   
   }
 
   ionViewWillLeave() {
     this.socket.disconnect();
   }
+
+
+  //ionViewWillLeave() {
+    //this.socket.disconnect();
+  //}
     
   send(msg) {
     if(msg !=''){
-
-      let data={
-        sender:'doten',
-        reciever:'Galley',
-        sender1: 'Khusant',
-        sender2: 'Sonam',
-        message:msg
-      }
-      this.socket.emit('message', data);
+      
+    this.sender=window.localStorage.getItem('sender');
+    this.name=window.localStorage.getItem('reciever');
+    
+    let data={
+      message:this.chat_input,
+      sender:this.sender,
+      reciever:this.name
     }
+
+    this.socket.emit('message',data);
+    
     this.chat_input ='';
   }
+}
     
+ 
   getMessages() {
     let observable =new Observable(observer => {
       this.socket.on('message', (data) => {
@@ -61,8 +94,7 @@ export class ChatscreenPage implements OnInit {
     }); //try semi colon here
     
     return observable;
-    
-  }
+  } 
 
   getUsers() {
     let observable =new Observable(observer => {
@@ -73,10 +105,9 @@ export class ChatscreenPage implements OnInit {
     
     return observable;
     
-  }
+ }
     
 
   ngOnInit() {
   }
-
 }
