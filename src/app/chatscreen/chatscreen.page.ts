@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-chatscreen',
@@ -17,23 +16,9 @@ export class ChatscreenPage implements OnInit {
   messages = [];
   nickname = '';
   message = '';
-  name:string;
-  username:string='';
 
-  constructor(public navCtrl: NavController, public toastCtrl:ToastController,private route:ActivatedRoute,private router:Router) {
-
-    this.route.queryParams.subscribe(params=>{
-      if(this.router.getCurrentNavigation().extras.state){
-        this.name=this.router.getCurrentNavigation().extras.state.name;
-        
-      }
-      this.username=''+this.name;
-
-      
-      });
-
-
-    this.socket = io('http://10.2.2.214:3000');
+  constructor(public navCtrl: NavController, public toastCtrl:ToastController) {
+    this.socket = io('http://localhost:3000');
     this.socket.on('message', (msg) => {
       console.log("message", msg);
       this.chats.push(msg);
@@ -55,7 +40,15 @@ export class ChatscreenPage implements OnInit {
     
   send(msg) {
     if(msg !=''){
-    this.socket.emit('message', msg);
+
+      let data={
+        sender:'doten',
+        reciever:'Galley',
+        sender1: 'Khusant',
+        sender2: 'Sonam',
+        message:msg
+      }
+      this.socket.emit('message', data);
     }
     this.chat_input ='';
   }
@@ -70,7 +63,7 @@ export class ChatscreenPage implements OnInit {
     return observable;
     
   }
-    
+
   getUsers() {
     let observable =new Observable(observer => {
       this.socket.on('users-changed', (data) => {

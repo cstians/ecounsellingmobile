@@ -4,7 +4,7 @@
   
   <ion-title style="text-align:center">
   
-  {{username}}
+  Chat App
   
   </ion-title>
   
@@ -20,10 +20,7 @@
   
   <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
   
-  <span>{{ message }}</span>
-  
-  </ion-col>
-  
+
   </ion-row>
   
   </ion-grid>
