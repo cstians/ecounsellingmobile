@@ -3,8 +3,6 @@ import { NavController, ToastController } from '@ionic/angular';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import * as crypto from 'crypto-js';
-
 @Component({
   selector: 'app-chatscreen',
   templateUrl: './chatscreen.page.html',
@@ -20,8 +18,8 @@ export class ChatscreenPage implements OnInit {
   message = '';
   name:string;
   authName:string;
-  //username:string='';
-  //sender:string='';
+  username:string='';
+  sender:string='';
   user='';
 
 

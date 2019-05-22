@@ -17,14 +17,14 @@
           <ion-list>
             <ion-item-sliding *ngFor="let item of items">
              <ion-item (click)="chatHome(item)">
-              <p>{{item.name}}</p><br>
+              <p>{{item.display_name.substring(0,7)}}</p><br>
              </ion-item>
              <ion-item-options side="end">
                <ion-item-option color="danger" (click)="remove(item)">Delete</ion-item-option>
              </ion-item-options>
             </ion-item-sliding>
             </ion-list>
-            <div>{{name}}</div>
+
       </ion-col>
     </ion-row> 
   </ion-grid>
