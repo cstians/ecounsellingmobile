@@ -29,7 +29,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/storage": "^2.2.0",
-    "angular": "^1.7.7",
+    "angular": "^1.8.0",
     "both": "0.0.0",
     "cordova": "^9.0.0",
     "cordova-android": "8.0.0",
